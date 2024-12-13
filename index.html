@@ -1,0 +1,191 @@
+<html><head><base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINI3D - Projetos 3D Interativos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                        url('https://i.ytimg.com/vi/uwc0XWLeB9k/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #ffffff;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: #ffffff;
+            color: #000000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background: #cccccc;
+            transform: scale(1.05);
+        }
+
+        .contact-section {
+            padding: 4rem 2rem;
+            background: #1a1a1a;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form h2 {
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .contact-button {
+            background: #ffffff;
+            color: #000000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #cccccc;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>VINI3D</h1>
+        <p>Transforme suas ideias em realidade com nossa plataforma de design 3D interativa</p>
+        <button class="cta-button">Explorar Projetos</button>
+    </header>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Visualização 3D Avançada</h3>
+                <p>Explore projetos em detalhes com nossa tecnologia de renderização em tempo real</p>
+            </div>
+            <div class="feature-card">
+                <h3>Personalização Total</h3>
+                <p>Modifique materiais, cores e acabamentos com facilidade</p>
+            </div>
+            <div class="feature-card">
+                <h3>Design Interativo</h3>
+                <p>Altere plantas baixas e fachadas em tempo real</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-form">
+            <h2>Entre em Contato</h2>
+            <button class="contact-button" id="contactButton">Enviar E-mail</button>
+        </div>
+    </section>
+
+    <script>
+        document.querySelector('.cta-button').addEventListener('click', () => {
+            alert('Em breve! Estamos preparando recursos incríveis para você.');
+        });
+
+        document.getElementById('contactButton').addEventListener('click', () => {
+            window.location.href = 'mailto:vv5798286@gmail.com?subject=Contato VINI3D&body=Olá, gostaria de mais informações sobre os projetos 3D.';
+        });
+
+        // Inicialização básica do Three.js para futura implementação
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body></html>
